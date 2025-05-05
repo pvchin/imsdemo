@@ -1,0 +1,4 @@
+﻿u_id,u_userid,u_name,u_email,u_password,u_lastlogindate,u_level,u_usergroup,u_jobtitle
+1,admin,Administrator,admin@abc.com,admin,,,,
+5,adeline,Adeline,adeline@abc.com,abc123,,,,
+6,janet,Janet Anderson,janet@abc.com,abc123,,,,

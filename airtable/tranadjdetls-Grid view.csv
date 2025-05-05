@@ -1,0 +1,3 @@
+﻿tad_id,tad_batchno,tad_itemno,tad_desp,tad_packing,tad_qtyonhand,tad_qtycount,tad_qtyadjust,tad_branch,tad_unit
+18,ADJ250000001,A0002,A0002 Description,,60.000,58.000,-2.000,,Pc
+19,ADJ250000001,A0004,A0004 Item,,0.000,1.000,1.000,,PC

@@ -1,0 +1,4 @@
+﻿ie_id,ie_itemno,ie_lotno,ie_datereceived,ie_location,ie_dateexpiry,ie_pono,ie_podate,ie_qtyonhand,ie_qtyreceived,ie_ucost,ie_post
+7,X0002,LotB1122,4/4/2025,,4/4/2025,PO250000002,4/4/2025,90.000,90.000,$4.00,0
+8,X0001,LotA111,4/4/2025,,4/4/2026,PO250000002,4/4/2025,40.000,50.000,$6.00,0
+9,X0001,LOTM1212,4/4/2025,,12/4/2025,PO250000003,4/4/2025,40.000,40.000,$6.00,0

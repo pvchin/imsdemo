@@ -1,0 +1,9 @@
+﻿it_id,it_transno,it_itemno,it_transdate,it_qty,it_value,it_disc,it_netvalue,it_extvalue,it_pfactor,it_transtype,it_scno,it_sc,it_branch,it_postdate,it_remark,it_desp,it_packing
+43,PO250000001,A0001,4/4/2025,50.000,$6.00,$0.00,$6.00,$300.00,1,Purchase,S4444,S4444 Suppliers,,,,A0001 Description,24 X 100G
+44,PO250000001,A0002,4/4/2025,80.000,$8.00,$0.00,$8.00,$640.00,1,Purchase,S4444,S4444 Suppliers,,,,A0002 Description,
+45,PO250000002,X0002,4/4/2025,90.000,$0.00,$0.00,$4.00,$360.00,1,Purchase,S2222,S2222 Supplier,,,,X0002 Expiry Item ,24 x 100g
+46,PO250000002,X0001,4/4/2025,50.000,$6.00,$0.00,$6.00,$300.00,1,Purchase,S2222,S2222 Supplier,,,,X0001 Item with expiry date,
+47,INV250000001,X0001,4/4/2025,10.000,$10.00,$0.00,$10.00,$100.00,1,Sales,AXXXX,AXXXX Customer,,,,X0001 Item with expiry date,
+48,INV250000001,A0002,4/4/2025,20.000,$12.00,$0.00,$12.00,$240.00,1,Sales,AXXXX,AXXXX Customer,,,,A0002 Description,
+49,PO250000003,X0001,4/4/2025,40.000,$6.00,$0.00,$6.00,$240.00,1,Purchase,S2222,S2222 Supplier,,,,X0001 Item with expiry date,
+50,PO250000004,A0004,4/11/2025,50.000,$6.00,$0.00,$6.00,,1,Purchase,S2222,S2222 Supplier,,,,A0004 Item,24 X 100G

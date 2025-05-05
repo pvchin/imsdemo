@@ -1,0 +1,7 @@
+﻿item_id,item_no,item_desp,item_brand,item_manufacturer,item_catno,item_lotno,item_grade,item_datereceived,item_location,item_condition,item_size,item_suppno,item_supplier,item_price,item_minlvl,item_qtyonhand,item_type,item_cost,item_trackexpiry,item_unit,item_pack,item_trackserial,item_dateused,item_remark,item_productno,item_inactive,item_cat
+1,A0001,A0001 Description,,,,,,,,,,S4444,S4444 Suppliers,$12.00,5.000,50.000,,$6.00,,PK,24 X 100G,,,,,,Consumables
+2,A0002,A0002 Description,,,,,,,,,,S4444,S4444 Suppliers,$12.00,5.000,60.000,,$8.00,,Pc,,,,,,,
+3,A0003,A0003 Description,,,,,,,,,,S1111,S1111 Supplier,$15.00,10.000,12001.124,,$9.00,,Ctn,,,,,,,
+5,A0004,A0004 Item,,,,,,3/16/2025,,,,S2222,S2222 Supplier,$10.00,5.000,50.000,,$6.00,,PC,24 X 100G,,3/16/2025,,,,
+6,X0001,X0001 Item with expiry date,,,,,,3/25/2025,,,,S2222,S2222 Supplier,$10.00,,80.000,,$6.00,checked,PK,,,3/25/2025,,,,
+8,X0002,X0002 Expiry Item ,,,,,,4/4/2025,,,,S2222,S2222 Supplier,$0.00,,90.000,,$0.00,checked,PK,24 x 100g,,4/4/2025,,,,

@@ -1,0 +1,5 @@
+﻿s_id,s_suppno,s_supp,s_add1,s_add2,s_add3,s_add4,s_phone,s_fax,s_email,s_contact,s_crlimit,s_terms,s_glcode,s_branch,s_bankname,s_bankacno
+1,S1111,S1111 Supplier,,,,,111-2212222,,jonathan@gmail.com,Jonathan,,,,,,
+2,S3333,S3333 Supplier,,,,,111-313133,,jessica@S3333.com,Jessica,,,,,,
+3,S2222,S2222 Supplier,,,,,111-2122222,,janet@S2222.com,Janet,,,,,,
+4,S4444,S4444 Suppliers,,,,,11101331133,,alex@54444.com,Alex,$0.00,0,,,,

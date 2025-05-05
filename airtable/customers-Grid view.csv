@@ -1,0 +1,5 @@
+﻿c_id,c_custno,c_cust,c_add1,c_add2,c_add3,c_add4,c_phone,c_fax,c_email,c_crlimit,c_terms,c_contact,c_post,c_glcode,c_branch,c_area,c_type
+1,CXXX,CXXX Customer,,,,,121-121212,,cxxx@gmail.com,,,Mr Joseph,,,,,
+2,DXXXX,DXXXX Customer,,,,,111-323232,,dxxx@abc.com,,,Samual,,,,,
+3,EXXXX,EXXXX Customer,,,,,111-2131112,,rose@exxx.com,,,Rose,,,,,
+4,AXXXX,AXXXX Customer,,,,,111-221212,,,$0.00,0,James,,,,,

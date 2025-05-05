@@ -1,0 +1,9 @@
+﻿tl_id,tl_tranno,tl_type,tl_itemno,tl_qty,tl_ucost,tl_unit,tl_desp,tl_packing,tl_pfactor,tl_netucost,tl_disc,tl_amount,tl_remark,tl_order,tl_branch,tl_lotno,tl_dateexpiry,tl_trackexpiry,tl_uprice,tl_location,tl_uoldcost,tl_brand,tl_trantype,tl_post,tl_trandate,tl_trackserial
+152,PO250000001,Item,A0001,50.000,$6.00,PK,A0001 Description,24 X 100G,1.000,$6.00,$0.00,$300.00,,0,,,4/4/2025,,$0.00,,$0.00,,Purchase,1,4/4/2025,
+153,PO250000001,Item,A0002,80.000,$8.00,Pc,A0002 Description,,1.000,$8.00,$0.00,$640.00,,0,,,4/4/2025,,$0.00,,$0.00,,Purchase,1,4/4/2025,
+158,PO250000002,Item,X0001,50.000,$6.00,PK,X0001 Item with expiry date,,1.000,$6.00,$0.00,$300.00,,0,,LotA111,4/4/2026,checked,$0.00,,$0.00,,Purchase,1,4/4/2025,
+159,PO250000002,Item,X0002,90.000,$0.00,PK,X0002 Expiry Item ,24 x 100g,1.000,$4.00,$0.00,$360.00,,0,,LotB1122,4/4/2025,checked,$0.00,,$0.00,,Purchase,1,4/4/2025,
+162,INV250000001,Item,X0001,10.000,$6.00,PK,X0001 Item with expiry date,,1.000,$6.00,$0.00,$100.00,,0,,,4/4/2025,checked,$10.00,,$0.00,,Sales,,,
+163,INV250000001,Item,A0002,20.000,$8.00,Pc,A0002 Description,,1.000,$8.00,$0.00,$240.00,,0,,,4/4/2025,,$12.00,,$0.00,,Sales,,,
+164,PO250000003,Item,X0001,40.000,$6.00,PK,X0001 Item with expiry date,,1.000,$6.00,$0.00,$240.00,,0,,LOTM1212,12/4/2025,checked,$0.00,,$0.00,,Purchase,1,4/4/2025,
+166,PO250000004,Item,A0004,50.000,$6.00,PC,A0004 Item,24 X 100G,1.000,$6.00,$0.00,$300.00,,0,,,4/13/2025,,$0.00,,$0.00,,Purchase,1,4/11/2025,
