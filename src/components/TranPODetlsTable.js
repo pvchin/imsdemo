@@ -216,7 +216,7 @@ const TranPODetlsTable = ({
       {
         id: 10,
         name: "Amount",
-        selector: (row) => row.tl_excost || 0,
+        selector: (row) => row.tl_amount || 0,
         width: "200px",
         sortable: true,
         filterable: true,

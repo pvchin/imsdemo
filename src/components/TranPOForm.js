@@ -250,7 +250,7 @@ const TranPOForm = () => {
   const [singlebatchdetlsstate, setSingleBatchDetlsState] = useState({});
   const [singlebatchserialstate, setSingleBatchSerialState] = useState({});
   const [statustype, setStatusType] = useState("");
-  const [isCalc, setIsCalc] = useState(false);
+  const [isCalc, setIsCalc] = useState(true);
 
   //const [filterText, setFilterText] = React.useState('');
   const [doctype, setDocType] = useState("Purchase");
@@ -391,7 +391,7 @@ const TranPOForm = () => {
   const handleCalc = () => {
     console.log("calc");
     const totalamt = batchdetls.reduce((acc, item) => {
-      return acc + item.tl_excost;
+      return acc + item.tl_amount;
     }, 0);
     setValue("t_subtotal", totalamt);
     setValue("t_nettotal", totalamt - totdisc);
@@ -541,7 +541,7 @@ const TranPOForm = () => {
           it_value: rec.tl_ucost,
           it_disc: rec.tl_disc,
           it_netvalue: rec.tl_netucost,
-          it_extvalue: rec.tl_excost,
+          it_extvalue: rec.tl_amount,
           it_pfactor: rec.tl_pfactor,
           it_transtype: data.t_type,
           it_scno: data.t_scno,

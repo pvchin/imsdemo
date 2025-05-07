@@ -150,7 +150,7 @@ const initial_batchdetls = {
   tl_pfactor: 1,
   tl_netucost: 0,
   tl_disc: 0,
-  tl_excost: 0,
+  tl_amount: 0,
   tl_remark: "",
   tl_order: 0,
   tl_branch: "",
@@ -375,7 +375,7 @@ const TranSalesForm = () => {
     const totalamt =
       batchdetls &&
       batchdetls.reduce((acc, item) => {
-        return acc + item.tl_excost;
+        return acc + item.tl_amount;
       }, 0);
     setValue("t_subtotal", totalamt);
     setValue("t_nettotal", totalamt - totdisc);
@@ -521,7 +521,7 @@ const TranSalesForm = () => {
           it_value: rec.tl_uprice,
           it_disc: rec.tl_disc,
           it_netvalue: rec.tl_uprice,
-          it_extvalue: rec.tl_excost,
+          it_extvalue: rec.tl_amount,
           it_pfactor: rec.tl_pfactor,
           it_transtype: data.t_type,
           it_scno: data.t_scno,
