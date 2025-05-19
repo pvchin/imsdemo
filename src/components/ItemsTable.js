@@ -26,6 +26,9 @@ import { useAddItem } from "../react-query/items/useAddItem";
 import { useUpdateItem } from "../react-query/items/useUpdateItem";
 import { useDeleteItem } from "../react-query/items/useDeleteItem";
 import { useItemsHistory } from "../react-query/itemshistory/useItemsHistory";
+import { useDeleteItemsHistory } from "../react-query/itemshistory/useDeteteItemsHistory";
+import { useItemsExpiry } from "../react-query/itemsexpiry/useItemsExpiry";
+import { useDeleteItemExpiry } from "../react-query/itemsexpiry/useDeleteItemExpiry";
 import { useAddAuditlog } from "../react-query/auditlog/useAddAuditlog";
 import GetLocalUser from "../helpers/GetLocalUser";
 import CustomReactTable from "../helpers/CustomReactTable";
@@ -66,7 +69,10 @@ const ItemsTable = ({ type }) => {
   const addItem = useAddItem();
   const updateItem = useUpdateItem();
   const deleteItem = useDeleteItem();
-  const { itemshistory } = useItemsHistory();
+  const { itemshistory, setItemHistId } = useItemsHistory();
+  const deleteItemsHistory = useDeleteItemsHistory();
+  const { itemsexpiry, setItemExpId } = useItemsExpiry();
+  const deleteItemExpiry = useDeleteItemExpiry();
   const addAuditlog = useAddAuditlog();
   const localuser = GetLocalUser();
   const [state, setState] = useRecoilState(itemState);
@@ -229,6 +235,22 @@ const ItemsTable = ({ type }) => {
     addAuditlog(auditdata);
     // delete item
     deleteItem(id);
+    //delete item history
+    itemshistory &&
+      itemshistory
+        .filter((r) => r.it_itemno === state.item_no)
+        .forEach((rec) => {
+          const { id } = rec;
+          deleteItemsHistory(id);
+        });
+    //delete item expiry
+    itemsexpiry &&
+      itemsexpiry
+        .filter((r) => r.ie_itemno === state.item_no)
+        .forEach((rec) => {
+          const { id } = rec;
+          deleteItemExpiry(id);
+        });
   };
 
   const handleAddItem = () => {

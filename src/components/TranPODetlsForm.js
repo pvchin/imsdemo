@@ -603,6 +603,7 @@ const TranPODetlsForm = ({
                       control={control}
                       name="tl_lotno"
                       defaultValue={state.tl_lotno}
+                      rules={{ required: isexpirydate ? true : false }}
                       render={({ field: { onChange, value, ref } }) => (
                         <InputGroup>
                           <HStack w="100%" py={1}>
@@ -632,6 +633,7 @@ const TranPODetlsForm = ({
                       control={control}
                       name="tl_dateexpiry"
                       defaultValue={state.tl_dateexpiry}
+                      rules={{ required: isexpirydate ? true : false }}
                       render={({ field: { onChange, value, ref } }) => (
                         <InputGroup>
                           <HStack w="100%" py={1}>

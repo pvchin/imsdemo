@@ -189,7 +189,7 @@ const TranSalesLotForm = ({
   const table = useMantineReactTable({
     title: "Expiry Lots Table",
     columns: expirycolumns,
-    data: lotstate,
+    data: lotstate.filter((r) => r.tl_post === "0"),
     initialState: {
       columnVisibility: { tl_id: false },
       sorting: [{ id: "tl_dateexpiry", desc: false }],

@@ -299,7 +299,7 @@ const TranSalesDetlsForm = ({
     const {
       item_no,
       item_desp,
-      item_packing,
+      item_pack,
       item_unit,
       item_cost,
       item_price,
@@ -309,7 +309,7 @@ const TranSalesDetlsForm = ({
     setItemExpId((prev) => (prev = item_no));
     setValue("tl_itemno", item_no);
     setValue("tl_desp", item_desp);
-    setValue("tl_packing", item_packing);
+    setValue("tl_packing", item_pack);
     setValue("tl_unit", item_unit);
     setValue("tl_ucost", item_cost);
     setValue("tl_uprice", item_price);
@@ -322,7 +322,7 @@ const TranSalesDetlsForm = ({
     setTrackSerial(item_trackserial);
     //update batchlots
     const newLotData = itemsexpiry
-      .filter((r) => r.ie_itemno === item_no)
+      .filter((r) => r.ie_itemno === item_no && r.ie_post === "0")
       .map((rec) => {
         return {
           tl_id: nanoid(),

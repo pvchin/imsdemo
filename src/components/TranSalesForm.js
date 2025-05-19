@@ -477,6 +477,8 @@ const TranSalesForm = () => {
     const newData = { ...data, t_post: "1" };
     onSubmit(newData);
 
+    console.log("post batchlots", batchlots);
+
     /*  const ap = {
       ...initial_ap,
       ap_pono: data.po_no,
@@ -565,20 +567,25 @@ const TranSalesForm = () => {
           updateItem({ id, ...fields });
         }
       });
-      batchlots.forEach((rec) => {
-        const { tl_itemno, tl_pono, tl_qty } = rec;
-        // get expiry log details
-        const itemexpiryrec = itemsexpiry
-          .filter((r) => r.ie_itemno === tl_itemno && r.ie_pono === tl_pono)
-          .map((rec) => {
-            const qtybal = rec.ie_qtyonhand - tl_qty;
-            return { ...rec, ie_qtyonhand: qtybal };
-          });
-        console.log("itemexpiryrec", itemexpiryrec);
-        const { id, ie_id, ...fields } = itemexpiryrec[0];
-        updateItemExpiry({ id, ...fields });
-      });
+      //batch lots
+      if (batchlots.length > 0) {
+        batchlots.forEach((rec) => {
+          const { tl_itemno, tl_pono, tl_qty } = rec;
+          // get expiry log details
+          const itemexpiryrec = itemsexpiry
+            .filter((r) => r.ie_itemno === tl_itemno && r.ie_pono === tl_pono)
+            .map((rec) => {
+              const qtybal = rec.ie_qtyonhand - tl_qty;
+              const post = qtybal > 0 ? "0" : "1";
+              return { ...rec, ie_qtyonhand: qtybal, ie_post: post };
+            });
+          console.log("itemexpiryrec", itemexpiryrec);
+          const { id, ie_id, ...fields } = itemexpiryrec[0];
+          updateItemExpiry({ id, ...fields });
+        });
+      }
       //add to auditlog
+      console.log("post audilot");
       const auditdata = {
         al_userid: localuser.userid,
         al_user: localuser.name,
@@ -593,6 +600,11 @@ const TranSalesForm = () => {
       addAuditlog(auditdata);
     }
     //navigate
+    navigate(-1);
+  };
+
+  const handleOnSubmit = (values) => {
+    onSubmit(values);
     navigate(-1);
   };
 
@@ -665,9 +677,6 @@ const TranSalesForm = () => {
       };
       addAuditlog(auditdata);
     }
-
-    //console.log('addpurchase', statustype, newstrno, newdata);
-    navigate(-1);
   };
 
   const handleExit = () => {
@@ -912,7 +921,7 @@ const TranSalesForm = () => {
                         variant="outline"
                         size="lg"
                         //type="submit"
-                        onClick={handleSubmit(onSubmit)}
+                        onClick={handleSubmit(handleOnSubmit)}
                         isDisabled={lock === "1" || isFetching}
                       >
                         Submit
