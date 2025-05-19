@@ -1,17 +1,9 @@
 import React from "react";
-import {
-  Link,
-  Box,
-  Divider,
-  Flex,
-  Text,
-  Button,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 
 import Logo from "./Logo";
 import NavItems from "./NavItems";
-import AvatarBox from "./AvatarBox";
+//import AvatarBox from "./AvatarBox";
 import UserStatusBox from "./UserStatusBox";
 
 const NavBar = (props) => {
