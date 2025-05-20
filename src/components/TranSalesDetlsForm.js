@@ -103,7 +103,7 @@ const TranSalesDetlsForm = ({
     useRecoilState(editTranLotsIdState);
   const [batchlotform, setBatchLotForm] = useState();
   const [qty, setQty] = useState(state.tl_qty);
-  const [ucost, setUCost] = useState(state.tl_netucost);
+  const [uprice, setUPrice] = useState(state.tl_uprice);
   const [isexpirydate, setIsExpiryDate] = useState(state.tl_trackexpiry);
   const [trackserial, setTrackSerial] = useState(state.tl_trackserial);
 
@@ -215,11 +215,14 @@ const TranSalesDetlsForm = ({
   //UPDATE action
   const handleSaveItem = ({ values, table, row }) => {
     let qtycount = 0;
-    const qtyvalue = parseFloat(values.tl_qty);
+    const qtyvalue =
+      parseFloat(values.tl_qty) > values.tl_qtyonhand
+        ? values.tl_qtyonhand
+        : parseFloat(values.tl_qty);
     const { original } = row;
     const { tl_id } = original;
     console.log("lotsave", values, original);
-    const newData = [{ ...original, tl_qty: parseFloat(values.tl_qty) }];
+    const newData = [{ ...original, tl_qty: qtyvalue }];
     const oldData = lotstate.filter((r) => r.tl_id !== original.tl_id);
     const allqty = oldData.reduce((acc, item) => {
       const value = isNaN(item.tl_qty) ? 0 : item.tl_qty;
@@ -231,7 +234,7 @@ const TranSalesDetlsForm = ({
     const newQty = allqty + qtyvalue;
     console.log("lotqtycalc", allqty, qtycount, newQty, oldData);
     setValue("tl_qty", newQty);
-    setQty(newQty);
+    setQty((prev) => (prev = newQty));
   };
 
   const table = useMantineReactTable({
@@ -317,7 +320,7 @@ const TranSalesDetlsForm = ({
     setValue("tl_trackexpiry", item_trackexpiry);
     setValue("tl_trackserial", item_trackserial);
     setQty((prev) => (prev = 0));
-    setUCost((prev) => (prev = item_price));
+    setUPrice((prev) => (prev = item_price));
     setIsExpiryDate(item_trackexpiry);
     setTrackSerial(item_trackserial);
     //update batchlots
@@ -384,13 +387,13 @@ const TranSalesDetlsForm = ({
   };
 
   const handleCalc = () => {
-    const amt = Math.round(qty * ucost, 2);
+    const amt = Math.round(qty * uprice, 2);
     setValue("tl_amount", amt);
   };
 
   useEffect(() => {
     handleCalc();
-  }, [qty, ucost]);
+  }, [qty, uprice]);
 
   /* useEffect(() => {
     handleQtyCalc();
@@ -656,7 +659,7 @@ const TranSalesDetlsForm = ({
                           width="full"
                           onChange={(e) => {
                             onChange(e);
-                            setUCost((prev) => (prev = e));
+                            setUPrice((prev) => (prev = e));
                           }}
                           //borderColor="gray.400"
                           //textTransform="capitalize"
