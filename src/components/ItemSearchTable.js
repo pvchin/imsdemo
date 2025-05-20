@@ -82,7 +82,7 @@ const ItemSearchTable = ({ update_Item, onItemSearchClose }) => {
 
     {
       header: "UPrice",
-      accessorFn: (row) => row.item_wsp,
+      accessorFn: (row) => row.item_price,
       size: "100px",
       //align: 'left',
       Cell: ({ cell }) =>

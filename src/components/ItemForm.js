@@ -205,7 +205,7 @@ const ItemForm = () => {
     });
 
   const itemslotdata = itemsexpiry
-    .filter((r) => r.ie_itemno === state.item_no)
+    .filter((r) => r.ie_itemno === state.item_no && r.ie_post === "0")
     .map((rec) => {
       return { ...rec };
     });

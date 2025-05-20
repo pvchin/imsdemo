@@ -538,7 +538,7 @@ const TranPOForm = () => {
           it_itemno: rec.tl_itemno,
           it_transdate: data.t_date,
           it_qty: rec.tl_qty,
-          it_value: rec.tl_ucost,
+          it_value: rec.tl_netucost,
           it_disc: rec.tl_disc,
           it_netvalue: rec.tl_netucost,
           it_extvalue: rec.tl_amount,
@@ -578,7 +578,7 @@ const TranPOForm = () => {
           switch (data.t_type) {
             case "Purchase":
               qtyonhand = itemonhandrec[0].item_qtyonhand + rec.tl_qty;
-              cost = rec.tl_ucost;
+              cost = rec.tl_netucost;
               suppno = data.t_scno;
               supp = data.t_sc;
               console.log(
